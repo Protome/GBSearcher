@@ -60,6 +60,8 @@ struct ImageViewerSwiftUI : UIViewControllerRepresentable {
 struct ImageViewerContainerView: View {
     @ObservedObject var imageLoader: ImageLoader
     
+    @State private var showShareSheet: Bool = false
+    
     var placeholder: UIImage
     
     init(url: String, imageCache: ImageCache, placeholder: UIImage = UIImage(named: "Placeholder")!) {
@@ -71,6 +73,14 @@ struct ImageViewerContainerView: View {
     }
     
     var body: some View {
-        ImageViewerSwiftUI(image: self.imageLoader.downloadedImage ?? placeholder)
+        ImageViewerSwiftUI(image: self.imageLoader.downloadedImage ?? placeholder)        .navigationBarItems(trailing:
+            Image(systemName: "square.and.arrow.up")
+                .onTapGesture {
+                    self.showShareSheet = true
+                }
+            )
+            .sheet(isPresented: $showShareSheet) {
+            ShareSheet(sharing: [self.imageLoader.downloadedImage ?? ""])
+        }
     }
 }
