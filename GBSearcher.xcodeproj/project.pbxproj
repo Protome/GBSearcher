@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5A951E023781F13006F2BAD /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A951DF23781F13006F2BAD /* ImageViewer.swift */; };
+		E58658892378BF54005402FD /* ImageViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58658882378BF54005402FD /* ImageViewer.xib */; };
 		E5A951E223782FED006F2BAD /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A951E123782FED006F2BAD /* VideoThumbnailView.swift */; };
 		E5A951E423783253006F2BAD /* GBVideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A951E323783253006F2BAD /* GBVideoDetail.swift */; };
 		E5A951E723783601006F2BAD /* VideoDetailStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A951E623783601006F2BAD /* VideoDetailStore.swift */; };
@@ -43,10 +43,13 @@
 		E5BB2C9823778C150082ED37 /* GBObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2C9723778C150082ED37 /* GBObject.swift */; };
 		E5BB2C9C237791E90082ED37 /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2C9B237791E90082ED37 /* ImageListView.swift */; };
 		E5BB2C9E237799950082ED37 /* SingleImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2C9D237799950082ED37 /* SingleImageObject.swift */; };
+		E5FE7AC42378C01B00D606C6 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE7AC32378C01B00D606C6 /* ImageViewer.swift */; };
+		E5FE7AC62378D0FB00D606C6 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE7AC52378D0FB00D606C6 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E5A951DF23781F13006F2BAD /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		E58658862378BAD2005402FD /* GBSearcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GBSearcher.entitlements; sourceTree = "<group>"; };
+		E58658882378BF54005402FD /* ImageViewer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewer.xib; sourceTree = "<group>"; };
 		E5A951E123782FED006F2BAD /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
 		E5A951E323783253006F2BAD /* GBVideoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBVideoDetail.swift; sourceTree = "<group>"; };
 		E5A951E623783601006F2BAD /* VideoDetailStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailStore.swift; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 		E5BB2C9723778C150082ED37 /* GBObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBObject.swift; sourceTree = "<group>"; };
 		E5BB2C9B237791E90082ED37 /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
 		E5BB2C9D237799950082ED37 /* SingleImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageObject.swift; sourceTree = "<group>"; };
+		E5FE7AC32378C01B00D606C6 /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		E5FE7AC52378D0FB00D606C6 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E58658872378BEB9005402FD /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				E58658882378BF54005402FD /* ImageViewer.xib */,
+				E5FE7AC32378C01B00D606C6 /* ImageViewer.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
 		E5A951E5237835DD006F2BAD /* Stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +147,7 @@
 		E5BB2C532376FC760082ED37 /* GBSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				E58658862378BAD2005402FD /* GBSearcher.entitlements */,
 				E5BB2C71237701F60082ED37 /* Views */,
 				E5BB2C6E2376FE480082ED37 /* Extensions */,
 				E5BB2C6B2376FD460082ED37 /* Models */,
@@ -190,6 +205,7 @@
 		E5BB2C71237701F60082ED37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E58658872378BEB9005402FD /* ImageViewer */,
 				E5B7492D237855BF00DA203E /* VideoPlayer */,
 				E5BB2C722377020D0082ED37 /* SearchView.swift */,
 				E5BB2C74237702200082ED37 /* GameItemView.swift */,
@@ -197,9 +213,9 @@
 				E5BB2C87237719D40082ED37 /* RemoteImageView.swift */,
 				E5BB2C8B23773CCA0082ED37 /* GameDetailView.swift */,
 				E5BB2C9B237791E90082ED37 /* ImageListView.swift */,
-				E5A951DF23781F13006F2BAD /* ImageViewer.swift */,
 				E5A951E123782FED006F2BAD /* VideoThumbnailView.swift */,
 				E5A951E823783B01006F2BAD /* VideoListView.swift */,
+				E5FE7AC52378D0FB00D606C6 /* ShareSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +297,7 @@
 			files = (
 				E5BB2C6D2376FD700082ED37 /* Keys.strings in Resources */,
 				E5BB2C612376FC780082ED37 /* LaunchScreen.storyboard in Resources */,
+				E58658892378BF54005402FD /* ImageViewer.xib in Resources */,
 				E5BB2C5E2376FC780082ED37 /* Preview Assets.xcassets in Resources */,
 				E5BB2C5B2376FC780082ED37 /* Assets.xcassets in Resources */,
 			);
@@ -296,12 +313,14 @@
 				E5BB2C94237786A10082ED37 /* GameDetails.swift in Sources */,
 				E5A951E723783601006F2BAD /* VideoDetailStore.swift in Sources */,
 				E5BB2C842377170B0082ED37 /* SearchResponse.swift in Sources */,
+				E5FE7AC42378C01B00D606C6 /* ImageViewer.swift in Sources */,
 				E5B749312378564100DA203E /* PlayerView.swift in Sources */,
 				E5BB2C86237717190082ED37 /* Game.swift in Sources */,
 				E5BB2C802377168D0082ED37 /* AgeRatings.swift in Sources */,
 				E5BB2C552376FC760082ED37 /* AppDelegate.swift in Sources */,
 				E5B7492C23784F5F00DA203E /* Show.swift in Sources */,
 				E5BB2C6A2376FCFB0082ED37 /* GiantbombService.swift in Sources */,
+				E5FE7AC62378D0FB00D606C6 /* ShareSheet.swift in Sources */,
 				E5BB2C92237786690082ED37 /* GameDetailsStore.swift in Sources */,
 				E5A951E223782FED006F2BAD /* VideoThumbnailView.swift in Sources */,
 				E5BB2C822377169A0082ED37 /* Platform.swift in Sources */,
@@ -322,7 +341,6 @@
 				E5BB2C7B237716580082ED37 /* Images.swift in Sources */,
 				E5BB2C8C23773CCA0082ED37 /* GameDetailView.swift in Sources */,
 				E5BB2C732377020D0082ED37 /* SearchView.swift in Sources */,
-				E5A951E023781F13006F2BAD /* ImageViewer.swift in Sources */,
 				E5BB2C8E23775B760082ED37 /* TextFormatter.swift in Sources */,
 				E5BB2C592376FC760082ED37 /* ContentView.swift in Sources */,
 			);
@@ -460,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GBSearcher/GBSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GBSearcher/Preview Content\"";
 				DEVELOPMENT_TEAM = VNFZ3Q6QAX;
@@ -469,8 +488,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Protome.GBSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GBSearcher/GBSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GBSearcher/Preview Content\"";
 				DEVELOPMENT_TEAM = VNFZ3Q6QAX;
@@ -489,8 +511,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Protome.GBSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

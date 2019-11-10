@@ -11,6 +11,7 @@ import SwiftUI
 struct GameDetailView: View {
     @EnvironmentObject var imageCache: ImageCache
     @ObservedObject var gameDetailsStore: GameDetailsStore
+    @State private var showShareSheet: Bool = false
     let game: Game
     
     init(game: Game) {
@@ -23,8 +24,8 @@ struct GameDetailView: View {
             VStack(alignment: .leading, spacing: 8.0) {
                 ZStack(alignment: .bottomLeading){
                     RemoteImageView(url: game.image?.super_url.absoluteString ?? "", imageCache: imageCache, placeholder: Image("PlaceholderLarge"))
-                        .aspectRatio(contentMode: ContentMode.fill)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2.25, alignment: .center)
+                        .aspectRatio(contentMode: ContentMode.fill)
                         .clipped()
                     
                     HStack(alignment: .center){
@@ -46,7 +47,7 @@ struct GameDetailView: View {
                 ImageListView(images: gameDetailsStore.gameImages, title: gameDetailsStore.gameImages.count > 0 ? "Images" : "")
                     .padding(.top)
                 
-                VideoListView(videoIds: gameDetailsStore.gameVideos,                              title: gameDetailsStore.gameVideos.count > 0 ? "Videos" : "")
+                VideoListView(videoIds: gameDetailsStore.gameVideos, title: gameDetailsStore.gameVideos.count > 0 ? "Videos" : "")
                 
                 HtmlText(htmlText: game.description ?? "")
                     .font(.body)
@@ -56,7 +57,16 @@ struct GameDetailView: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarItems(trailing:
+            Image(systemName: "square.and.arrow.up")
+                .onTapGesture {
+                    self.showShareSheet = true
+                }
+            )
         .onAppear(perform: loadData)
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(sharing: [self.gameDetailsStore.gameDetails?.site_detail_url ?? ""])
+        }
     }
     
     func loadData() {

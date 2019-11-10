@@ -20,9 +20,7 @@ struct PlayerView : UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<PlayerView>) {
-        
     }
-    
 }
 
 struct ContainerView: View {

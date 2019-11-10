@@ -23,11 +23,15 @@ struct ImageListView: View {
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach (images) { image in
-                        RemoteImageView(url: image.imageUrl ?? "", imageCache: self.imageCache)
+                        NavigationLink(destination: ImageViewerContainerView(url: image.imageUrl ?? "", imageCache: self.imageCache))
+                        {
+                        RemoteImageView(url: image.thumbnailUrl ?? "", imageCache: self.imageCache)
                             .frame(width: 220, height: 140, alignment: .center)
                             .clipped()
                             .cornerRadius(4)
                             .shadow(radius: 3)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding()

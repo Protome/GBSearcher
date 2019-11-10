@@ -35,7 +35,7 @@ class GameDetailsStore: ObservableObject {
                         var images: [SingleImageObject] = []
                         if let imageList = result.results.images {
                             for i in 0..<imageList.count {
-                                images.append(SingleImageObject(id: i, imageUrl: imageList[i].screen_url.absoluteString, thumbnailUrl: imageList[i].thumb_url.absoluteString ))
+                                images.append(SingleImageObject(id: i, imageUrl: imageList[i].super_url.absoluteString, thumbnailUrl: imageList[i].thumb_url.absoluteString ))
                             }
                         }
                         self?.gameImages = images
