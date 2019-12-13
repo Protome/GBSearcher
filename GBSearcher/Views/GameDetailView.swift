@@ -23,13 +23,16 @@ struct GameDetailView: View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(alignment: .leading, spacing: 8.0) {
                 ZStack(alignment: .bottomLeading){
-                    RemoteImageView(url: game.image?.super_url.absoluteString ?? "", imageCache: imageCache, placeholder: Image("PlaceholderLarge"))
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2.25, alignment: .center)
-                        .aspectRatio(contentMode: ContentMode.fill)
-                        .clipped()
-                    
+                    GeometryReader { geometry in
+                        RemoteImageView(url: self.game.image?.super_url.absoluteString ?? "", imageCache: self.imageCache, placeholder: Image("PlaceholderLarge"))
+                            .padding(1.0)
+                            .frame(maxWidth: geometry.size.width,
+                                   maxHeight: geometry.size.height)
+                            .aspectRatio(contentMode: ContentMode.fill)
+                            .clipped()
+                    }
                     HStack(alignment: .center){
-                        Text(game.name ?? "")
+                        Text(self.game.name ?? "")
                             .font(.largeTitle)
                             .fontWeight(.black)
                             .foregroundColor(Color.white)
@@ -37,7 +40,7 @@ struct GameDetailView: View {
                             .padding()
                         Spacer()
                     }.background(/*@START_MENU_TOKEN@*/Color("HeaderBackground")/*@END_MENU_TOKEN@*/)
-                }
+                }.frame(height: 250)
                 
                 Text(game.deck ?? "")
                     .font(.subheadline)
@@ -61,11 +64,11 @@ struct GameDetailView: View {
             Image(systemName: "square.and.arrow.up")
                 .onTapGesture {
                     self.showShareSheet = true
-                }
-            )
-        .onAppear(perform: loadData)
-        .sheet(isPresented: $showShareSheet) {
-            ShareSheet(sharing: [self.gameDetailsStore.gameDetails?.site_detail_url ?? ""])
+            }
+        )
+            .onAppear(perform: loadData)
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(sharing: [self.gameDetailsStore.gameDetails?.site_detail_url ?? ""])
         }
     }
     
