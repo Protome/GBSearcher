@@ -30,16 +30,17 @@ class GameDetailsStore: ObservableObject {
                 switch result {
                 case .success(let result):
                     if let result = result {
+                        guard let resultsList = result.results else { return }
                         self?.gameDetails = result.results
                         
                         var images: [SingleImageObject] = []
-                        if let imageList = result.results.images {
+                        if let imageList = resultsList.images {
                             for i in 0..<imageList.count {
                                 images.append(SingleImageObject(id: i, imageUrl: imageList[i].super_url.absoluteString, thumbnailUrl: imageList[i].thumb_url.absoluteString ))
                             }
                         }
                         self?.gameImages = images
-                        self?.gameVideos = result.results.videos?.reversed() ?? []
+                        self?.gameVideos = resultsList.videos?.reversed() ?? []
                     }
                 case .failure: return
                 }
