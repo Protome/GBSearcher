@@ -9,11 +9,20 @@
 import SwiftUI
 
 struct SearchView : View {
-    @State private var query: String = "Gravity Rush"
-    @EnvironmentObject var gamesSearchService: GamesSearchService
     
     var body: some View {
         NavigationView {
+            MasterView()
+            .navigationBarTitle(Text("Search"))
+            GameDetailView(game: nil)
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+    }
+    
+    struct MasterView: View {
+        @State private var query: String = "Gravity Rush"
+        @EnvironmentObject var gamesSearchService: GamesSearchService
+
+        var body: some View {
             VStack() {
                 TextField("", text: $query, onCommit: searchForGames)
                     .padding(.horizontal)
@@ -28,22 +37,23 @@ struct SearchView : View {
                             }
                         }
                     }
-                }.navigationBarTitle(Text("Search"))
+                }
             }
-        }.onAppear(perform: searchForGames)
-    }
-    
-    private func searchForGames() {
-        gamesSearchService.searchForGames(query: query)
-    }
-    
-    private func listItemAppears(_ game: Game) {
-        if gamesSearchService.games.count < 3 {
-            return
+            .onAppear(perform: searchForGames)
+        }
+
+        private func searchForGames() {
+            gamesSearchService.searchForGames(query: query)
         }
         
-        if gamesSearchService.games[gamesSearchService.games.count - 3].id == game.id {
-            gamesSearchService.searchForGames(query: query)
+        private func listItemAppears(_ game: Game) {
+            if gamesSearchService.games.count < 3 {
+                return
+            }
+            
+            if gamesSearchService.games[gamesSearchService.games.count - 3].id == game.id {
+                gamesSearchService.searchForGames(query: query)
+            }
         }
     }
 }
