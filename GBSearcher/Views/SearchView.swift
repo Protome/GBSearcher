@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GBSwift
 
 struct SearchView : View {
     
@@ -60,7 +61,7 @@ struct SearchView : View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        let store = GamesSearchService(service: .init())
+        let store = GamesSearchService(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
         return SearchView().environmentObject(store)
     }
 }

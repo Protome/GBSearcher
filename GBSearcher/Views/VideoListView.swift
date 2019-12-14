@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GBSwift
 
 struct VideoListView: View {
     var videoIds: [GBObject]
@@ -34,7 +35,7 @@ struct VideoListView: View {
 
 struct VideoListView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoListView(videoIds: [GBObject(id: 9, guid: nil, api_detail_url: nil, name: "", site_detail_url: nil)], title: "test")
+        VideoListView(videoIds: [GBObject(id: 9, guid: nil, apiUrl: nil, name: "", siteUrl: nil)], title: "test")
         .environmentObject(ImageCache())
     }
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct AgeRatings: Decodable, Identifiable {
-    var id: Int?
-    let api_detail_url: URL?
-    let name: String?
+public struct AgeRatings: Decodable, Identifiable {
+    public let id: Int?
+    public let name: String?
+    public let api_detail_url: URL?
 }

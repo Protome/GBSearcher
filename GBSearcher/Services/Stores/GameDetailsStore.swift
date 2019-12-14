@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import GBSwift
 
 class GameDetailsStore: ObservableObject {
     @Published var gameDetails: GameDetails?

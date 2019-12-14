@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import GBSwift
 
 class GamesSearchService: ObservableObject {
     @Published var games: [Game] = []

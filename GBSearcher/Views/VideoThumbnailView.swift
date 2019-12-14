@@ -16,7 +16,7 @@ struct VideoThumbnailView: View {
     
     init(videoId: String) {
         self.videoId = videoId
-        videoDetailsStore = VideoDetailsStore(service: .init())
+        videoDetailsStore = VideoDetailsStore(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
     }
     
     init(videoDetailsStore:VideoDetailsStore, videoId: String) {

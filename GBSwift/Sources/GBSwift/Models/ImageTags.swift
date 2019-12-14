@@ -1,5 +1,5 @@
 //
-//  Platform.swift
+//  ImageTags.swift
 //  GBSearcher
 //
 //  Created by Kieran Bamford on 09/11/2019.
@@ -8,10 +8,8 @@
 
 import Foundation
 
-struct Platform: Decodable, Identifiable {
-    var id: Int
-    let api_detail_url: URL?
+public struct ImageTags: Decodable {
+    let total: Int?
     let name: String?
-    let site_detail_url: URL?
-    let abbreviation: String?
+    let api_detail_url: URL?
 }

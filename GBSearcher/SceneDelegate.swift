@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let store = GamesSearchService(service: .init())
+            let store = GamesSearchService(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
             window.rootViewController = UIHostingController(
                 rootView: SearchView()
                     .environmentObject(store)

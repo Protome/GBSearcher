@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import GBSwift
 
 struct UrlContainer: Decodable {
     let url: URL
@@ -51,7 +52,7 @@ class VideoDetailsStore: ObservableObject {
 class DummyVideoStore: VideoDetailsStore {
     
     init() {
-        super.init(service: .init())
+        super.init(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
         videoDetails = GBVideoDetail(id: 0,
                                      api_detail_url: nil,
                                      associations: nil,

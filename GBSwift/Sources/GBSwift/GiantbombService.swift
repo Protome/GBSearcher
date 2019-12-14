@@ -8,18 +8,20 @@
 
 import Foundation
 
-class GiantbombService {
+public class GiantbombService {
     private let session: URLSession
     private let decoder: JSONDecoder
-    private let key = Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")
     private let baseUrl = "https://www.giantbomb.com/api/"
     
-    init(session: URLSession = .shared, decoder: JSONDecoder = .init()) {
+    private let key: String
+    
+    public init(apiKey: String, session: URLSession = .shared, decoder: JSONDecoder = .init()) {
         self.session = session
         self.decoder = decoder
+        key = apiKey
     }
     
-    func search(matching query: String, pageNumber: Int = 1, handler: @escaping (Result<GBApiListResponse<Game>?, Error>) -> Void) {
+    public func search(matching query: String, pageNumber: Int = 1, handler: @escaping (Result<GBApiListResponse<Game>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: baseUrl + "search")
             else { preconditionFailure("Can't create url components...") }
@@ -51,7 +53,7 @@ class GiantbombService {
         }.resume()
     }
     
-    func fetchGameData(gameId: String, handler: @escaping (Result<GBApiResponse<GameDetails>?, Error>) -> Void) {
+    public func fetchGameData(gameId: String, handler: @escaping (Result<GBApiResponse<GameDetails>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: baseUrl + "game/" + gameId)
             else { preconditionFailure("Can't create url components...") }
@@ -80,7 +82,7 @@ class GiantbombService {
         }.resume()
     }
     
-    func fetchVideoData(videoId: String, handler: @escaping (Result<GBApiResponse<GBVideoDetail>?, Error>) -> Void) {
+    public func fetchVideoData(videoId: String, handler: @escaping (Result<GBApiResponse<GBVideoDetail>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: baseUrl + "video/" + videoId)
             else { preconditionFailure("Can't create url components...") }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GBSwift
 
 struct GameDetailView: View {
     @EnvironmentObject var imageCache: ImageCache
@@ -16,7 +17,7 @@ struct GameDetailView: View {
     
     init(game: Game?) {
         self.game = game
-        gameDetailsStore = GameDetailsStore(service: .init())
+        gameDetailsStore = GameDetailsStore(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
     }
     
     var body: some View {
@@ -25,7 +26,6 @@ struct GameDetailView: View {
                 ZStack(alignment: .bottomLeading){
                     GeometryReader { geometry in
                         RemoteImageView(url: self.game?.image?.super_url.absoluteString ?? "", imageCache: self.imageCache, placeholder: Image("PlaceholderLarge"))
-                            .padding(1.0)
                             .frame(maxWidth: geometry.size.width,
                                    maxHeight: geometry.size.height)
                             .aspectRatio(contentMode: ContentMode.fill)

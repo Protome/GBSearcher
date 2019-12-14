@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GBSwift
 
 struct GameItemView: View {
     @EnvironmentObject var imageCache: ImageCache
