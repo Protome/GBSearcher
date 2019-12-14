@@ -18,7 +18,7 @@ class GiantbombService {
         self.decoder = decoder
     }
     
-    func search(matching query: String, pageNumber: Int = 1, handler: @escaping (Result<SearchResponse?, Error>) -> Void) {
+    func search(matching query: String, pageNumber: Int = 1, handler: @escaping (Result<GBApiListResponse<Game>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://www.giantbomb.com/api/search")
             else { preconditionFailure("Can't create url components...") }
@@ -41,7 +41,7 @@ class GiantbombService {
             } else {
                 do {
                     let data = data ?? Data()
-                    let response = try self?.decoder.decode(SearchResponse.self, from: data)
+                    let response = try self?.decoder.decode(GBApiListResponse<Game>.self, from: data)
                     handler(.success(response))
                 } catch {
                     handler(.failure(error))
@@ -50,7 +50,7 @@ class GiantbombService {
         }.resume()
     }
     
-    func fetchGameData(gameId: String, handler: @escaping (Result<GameDetailsResponse?, Error>) -> Void) {
+    func fetchGameData(gameId: String, handler: @escaping (Result<GBApiResponse<GameDetails>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://www.giantbomb.com/api/game/" + gameId)
             else { preconditionFailure("Can't create url components...") }
@@ -70,7 +70,7 @@ class GiantbombService {
             } else {
                 do {
                     let data = data ?? Data()
-                    let response = try self?.decoder.decode(GameDetailsResponse.self, from: data)
+                    let response = try self?.decoder.decode(GBApiResponse<GameDetails>.self, from: data)
                     handler(.success(response))
                 } catch {
                     handler(.failure(error))
@@ -79,7 +79,7 @@ class GiantbombService {
         }.resume()
     }
     
-    func fetchVideoData(videoId: String, handler: @escaping (Result<GameVideoResponse?, Error>) -> Void) {
+    func fetchVideoData(videoId: String, handler: @escaping (Result<GBApiResponse<GBVideoDetail>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://www.giantbomb.com/api/video/" + videoId)
             else { preconditionFailure("Can't create url components...") }
@@ -99,7 +99,7 @@ class GiantbombService {
                 } else {
                     do {
                         let data = data ?? Data()
-                        let response = try self?.decoder.decode(GameVideoResponse.self, from: data)
+                        let response = try self?.decoder.decode(GBApiResponse<GBVideoDetail>.self, from: data)
                         handler(.success(response))
                     } catch {
                         print(url)

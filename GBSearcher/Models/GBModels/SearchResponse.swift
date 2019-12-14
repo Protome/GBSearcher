@@ -8,35 +8,24 @@
 
 import Foundation
 
-struct SearchResponse: Decodable {
+struct GBApiResponse<Element: Decodable> : Decodable {
     let error: String
     let limit: Int
     let offset: Int
     let number_of_page_results: Int
     let number_of_total_results: Int
     let status_code: Int
-    let results: [Game]
+    let results: Element?
     let version: String
 }
 
-struct GameDetailsResponse: Decodable {
+struct GBApiListResponse<Element: Decodable> : Decodable  {
     let error: String
     let limit: Int
     let offset: Int
     let number_of_page_results: Int
     let number_of_total_results: Int
     let status_code: Int
-    let results: GameDetails
-    let version: String
-}
-
-struct GameVideoResponse: Decodable {
-    let error: String
-    let limit: Int
-    let offset: Int
-    let number_of_page_results: Int
-    let number_of_total_results: Int
-    let status_code: Int
-    let results: GBVideoDetail?
+    let results: [Element]
     let version: String
 }
