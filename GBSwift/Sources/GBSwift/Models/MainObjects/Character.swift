@@ -28,7 +28,7 @@ public struct Character: BaseObject {
     public let franchises: [Franchise]?
     public let friends: [Character]?
     public let games: [Game]?
-    public let gender: Gender
+    public let gender: Gender?
     public let last_name: String?
     public let locations: [Location]?
     public let objects: [Object]?
