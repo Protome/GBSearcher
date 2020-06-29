@@ -16,15 +16,15 @@ public struct Character: BaseObject {
     public let description: String?
     public let guid: String?
     public let image: Image?
-    public let image_tags: [ImageTags]?
     public let name: String?
     public let site_detail_url: URL?
     
+    public let image_tags: [ImageTags]?
     public let aliases: String?
     public let birthday: String? //Date
-    public let concepts: [GBObject]?
-    public let enemies: [GBObject]?
-    public let first_appeared_in_game: [GBObject]?
+    public let concepts: [Concept]?
+    public let enemies: [Character]?
+    public let first_appeared_in_game: [Game]?
     public let franchises: [GBObject]?
     public let friends: [GBObject]?
     public let games: [GBObject]?

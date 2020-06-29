@@ -23,7 +23,7 @@ public struct Company: BaseObject {
     public let abbreviation: String?
     public let aliases: String?  //TODO: Make this a list  //List of aliases the company is known by. A \n (newline) seperates each alias.
     public let characters: [Character]?
-//    public let concepts: [Concept]
+    public let concepts: [Concept]?
     public let date_founded: Date?
     public let developed_games: [Game]?
     public let developer_releases: [Game]?
@@ -32,8 +32,8 @@ public struct Company: BaseObject {
     public let location_city: String?
     public let location_country: String?
     public let location_state: String?
-//    public let locations: [Location]?
-//    public let objects: [Object]?
+    public let locations: [Location]?
+    public let objects: [Object]?
 //    public let people: [People]?
     public let phone: String?
     public let published_games: [Game]?

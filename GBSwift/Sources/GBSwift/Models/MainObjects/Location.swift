@@ -1,13 +1,13 @@
 //
-//  Chat.swift
+//  Location.swift
 //  
 //
-//  Created by Kieran Bamford on 14/12/2019.
+//  Created by Kieran Bamford on 29/06/2020.
 //
 
 import Foundation
 
-public struct Chat: BaseObject {
+public struct Location: BaseObject {
     public let id: Int?
     public let api_detail_url: URL?
     public let date_added: String?
@@ -19,7 +19,7 @@ public struct Chat: BaseObject {
     public let name: String?
     public let site_detail_url: URL?
     
-    public let channel_name: String?
-    public let password: String?
-    public let title: String?
+    public let aliases: String?
+    public let first_appeared_in_game: Game?
+    public let image_tags: [ImageTags]?
 }

@@ -16,7 +16,6 @@ public protocol BaseObject: Decodable, Identifiable {
     var description: String? { get }
     var guid: String? { get }
     var image: Image? { get }
-    var image_tags: [ImageTags]? { get }
     var name: String? { get }
     var site_detail_url: URL? { get }
 }

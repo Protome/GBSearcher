@@ -17,7 +17,6 @@ extension Chat {
                   description: "description",
                   guid: "guid",
                   image: Image.CreateMock(),
-                  image_tags: [ImageTags.CreateMock()],
                   name: "John",
                   site_detail_url: URL(string: "www.giantbomb.com"),
                   channel_name: "Channel",
