@@ -53,30 +53,7 @@ class DummyVideoStore: VideoDetailsStore {
     
     init() {
         super.init(service: .init(apiKey: Bundle.main.localizedString(forKey: "GB_Key", value: nil, table: "Keys")))
-        videoDetails = GBVideoDetail(id: 0,
-                                     api_detail_url: nil,
-                                     associations: nil,
-                                     deck: "This is a deck",
-                                     embed_player: URL(string: "https://quotey.app")!,
-                                     guid: nil,
-                                     length_seconds: 0,
-                                     name: "Video!",
-                                     premium: false,
-                                     publish_date: nil,
-                                     site_detail_url: nil,
-                                     image: Images(icon_url: URL(string: "https://quotey.app")!, medium_url: URL(string: "https://quotey.app")!, screen_url: URL(string: "https://quotey.app")!, screen_large_url: URL(string: "https://quotey.app")!, small_url: URL(string: "https://quotey.app")!, super_url: URL(string: "https://quotey.app")!, thumb_url: URL(string: "https://quotey.app")!, tiny_url: URL(string: "https://quotey.app")!, original_url: URL(string: "https://quotey.app")!, image_tags: nil),
-                                     user: nil,
-                                     hosts: nil,
-                                     crew: nil,
-                                     video_type: nil,
-                                     video_show: nil,
-                                     video_categories: nil,
-                                     savedTime: nil,
-                                     youtube_id: nil,
-                                     hd_url: nil,
-                                     high_url: nil,
-                                     low_url: nil,
-                                     url: nil)
+//        videoDetails = GBVideoDetail.CreateMock()
     }
     
 }

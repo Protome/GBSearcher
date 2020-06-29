@@ -32,28 +32,7 @@ struct GameItemView: View {
 
 struct GameItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let mockGame = Game(id: 1,
-                            aliases: nil,
-                            api_detail_url: nil,
-                            date_added: nil,
-                            date_last_updated: nil,
-                            deck: "Gravity Rush 2 is Kieran's GOTY every year",
-                            description: "",
-                            expected_release_day: nil,
-                            expected_release_month: nil,
-                            expected_release_quarter: nil,
-                            expected_release_year: nil,
-                            guid: nil,
-                            image: nil,
-                            image_tags: nil,
-                            name: "Gravity Rush 2",
-                            number_of_user_reviews: nil,
-                            original_game_rating: nil,
-                            original_release_date: nil,
-                            platforms: nil,
-                            site_detail_url: nil,
-                            resource_type: nil)
-        
+        let mockGame = Game.CreateMock()
         
         return GameItemView(game: mockGame)
             .environmentObject(ImageCache())

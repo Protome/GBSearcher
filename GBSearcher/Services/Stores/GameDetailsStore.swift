@@ -11,7 +11,7 @@ import Combine
 import GBSwift
 
 class GameDetailsStore: ObservableObject {
-    @Published var gameDetails: GameDetails?
+    @Published var game: Game?
     @Published var gameImages: [SingleImageObject] = []
     @Published var gameVideos: [GBObject] = []
     
@@ -32,7 +32,7 @@ class GameDetailsStore: ObservableObject {
                 case .success(let result):
                     if let result = result {
                         guard let resultsList = result.results else { return }
-                        self?.gameDetails = result.results
+                        self?.game = result.results
                         
                         var images: [SingleImageObject] = []
                         if let imageList = resultsList.images {

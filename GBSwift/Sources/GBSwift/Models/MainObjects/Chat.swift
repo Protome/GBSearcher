@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Chat.swift
 //  
 //
 //  Created by Kieran Bamford on 14/12/2019.
@@ -15,7 +15,7 @@ public struct Chat: BaseObject {
     public let deck: String?
     public let description: String?
     public let guid: String?
-    public let image: Images?
+    public let image: Image?
     public let image_tags: [ImageTags]?
     public let name: String?
     public let site_detail_url: URL?

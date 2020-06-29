@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BaseObject.swift
 //  
 //
 //  Created by Kieran Bamford on 14/12/2019.
@@ -15,7 +15,7 @@ public protocol BaseObject: Decodable, Identifiable {
     var deck: String? { get }
     var description: String? { get }
     var guid: String? { get }
-    var image: Images? { get }
+    var image: Image? { get }
     var image_tags: [ImageTags]? { get }
     var name: String? { get }
     var site_detail_url: URL? { get }

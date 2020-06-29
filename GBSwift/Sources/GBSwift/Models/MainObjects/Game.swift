@@ -1,5 +1,5 @@
 //
-//  GameDetails.swift
+//  Game.swift
 //  GBSearcher
 //
 //  Created by Kieran Bamford on 09/11/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GameDetails: Decodable, Identifiable {
+public struct Game: Decodable, Identifiable {
     public let id: Int
     public let aliases: String?
     public let api_detail_url: URL?
@@ -21,8 +21,8 @@ public struct GameDetails: Decodable, Identifiable {
     public let expected_release_quarter: Int?
     public let expected_release_year: Int?
     public let guid: String?
-    public let image: Images?
-    public let images: [Images]?
+    public let image: Image?
+    public let images: [Image]?
     public let image_tags: [ImageTags]?
     public let name: String?
     public let number_of_user_reviews: Int?
@@ -31,6 +31,7 @@ public struct GameDetails: Decodable, Identifiable {
     public let platforms: [Platform]?
     public let site_detail_url: URL?
     public let resource_type: String?
+    
     public let videos: [GBObject]?
     public let characters: [GBObject]?
     public let concepts: [GBObject]?

@@ -15,6 +15,6 @@ public struct Show: Decodable, Identifiable {
     public let title: String?
     public let site_detail_url: URL?
     public let position: Int?
-    public let image: Images?
+    public let image: Image?
 }
 

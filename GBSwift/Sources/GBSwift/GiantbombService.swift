@@ -53,7 +53,7 @@ public class GiantbombService {
         }.resume()
     }
     
-    public func fetchGameData(gameId: String, handler: @escaping (Result<GBApiResponse<GameDetails>?, Error>) -> Void) {
+    public func fetchGameData(gameId: String, handler: @escaping (Result<GBApiResponse<Game>?, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: baseUrl + "game/" + gameId)
             else { preconditionFailure("Can't create url components...") }
@@ -73,7 +73,7 @@ public class GiantbombService {
             } else {
                 do {
                     let data = data ?? Data()
-                    let response = try self?.decoder.decode(GBApiResponse<GameDetails>.self, from: data)
+                    let response = try self?.decoder.decode(GBApiResponse<Game>.self, from: data)
                     handler(.success(response))
                 } catch {
                     handler(.failure(error))

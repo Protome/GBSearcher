@@ -14,13 +14,14 @@ public struct GBObject: Decodable, Identifiable {
     public let api_detail_url: URL?
     public let name: String?
     public let site_detail_url: URL?
-    
-    public init(id: Int, guid: String?, apiUrl: URL?, name: String?, siteUrl: URL?)
-    {
-        self.id = id
-        self.guid = guid
-        self.api_detail_url = apiUrl
-        self.name = name
-        self.site_detail_url = siteUrl
+}
+
+extension GBObject {
+    public static func CreateMock() -> GBObject {
+        return GBObject(id: 0,
+                        guid: "0",
+                        api_detail_url: URL(string: "www.giantbomb.com"),
+                        name: "Object",
+                        site_detail_url: URL(string: "www.giantbomb.com"))
     }
 }
