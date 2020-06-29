@@ -38,6 +38,6 @@ struct RemoteImageView: View {
 
 struct RemoteImageView_Previews: PreviewProvider {
     static var previews: some View {
-        RemoteImageView(url: "", imageCache: ImageCache(), placeholder: Image("Placeholder"))
+        RemoteImageView(url: "https://giantbomb1.cbsistatic.com/uploads/square_avatar/0/5327/252573-yukes.jpg", imageCache: ImageCache(), placeholder: Image("Placeholder"))
     }
 }

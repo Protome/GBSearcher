@@ -19,7 +19,7 @@ extension Dlc {
                    image: Image.CreateMock(),
                    name: "John",
                    site_detail_url: URL(string: "www.giantbomb.com"),
-                   game: Game.CreateMock(),
+                   game: nil,
                    platform: Platform.CreateMock(),
                    releaseDate: "2008-05-06 16:41:28")
     }

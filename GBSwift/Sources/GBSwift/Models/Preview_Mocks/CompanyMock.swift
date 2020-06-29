@@ -25,9 +25,9 @@ extension Company {
                 characters: [Character.CreateMock()],
                 concepts: [Concept.CreateMock()],
                 date_founded: nil, //"2008-05-06 16:41:28",
-                developed_games: [Game.CreateMock()],
-                developer_releases: [Game.CreateMock()],
-                distributor_releases: [Game.CreateMock(), Game.CreateMock()],
+                developed_games: nil,
+                developer_releases: nil,
+                distributor_releases: nil,
                 location_address: "address",
                 location_city: "city",
                 location_country: "country",
@@ -35,8 +35,8 @@ extension Company {
                 locations: nil,
                 objects: nil,
                 phone: "00000000000000",
-                published_games: [Game.CreateMock()],
-                publisher_releases: [Game.CreateMock()],
+                published_games: nil,
+                publisher_releases: nil,
                 website: URL(string: "www.giantbomb.com"))
     }
 }

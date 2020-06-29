@@ -23,7 +23,7 @@ extension Franchise {
                          aliases: "aliases",
                          characters: [Character.CreateMock()],
                          concepts: [Concept.CreateMock()],
-                         games: [Game.CreateMock()],
+                         games: nil,
                          locations: nil,
                          objects: nil)
     }

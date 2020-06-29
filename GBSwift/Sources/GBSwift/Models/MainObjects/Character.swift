@@ -25,13 +25,13 @@ public struct Character: BaseObject {
     public let concepts: [Concept]?
     public let enemies: [Character]?
     public let first_appeared_in_game: [Game]?
-    public let franchises: [GBObject]?
-    public let friends: [GBObject]?
-    public let games: [GBObject]?
+    public let franchises: [Franchise]?
+    public let friends: [Character]?
+    public let games: [Game]?
     public let gender: Gender
     public let last_name: String?
-    public let locations: [GBObject]?
-    public let objects: [GBObject]?
+    public let locations: [Location]?
+    public let objects: [Object]?
     public let people: [GBObject]?
     public let real_name: String?
 }

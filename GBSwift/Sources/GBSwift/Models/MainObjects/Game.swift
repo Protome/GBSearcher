@@ -36,21 +36,21 @@ public struct Game: Decodable, Identifiable {
     public let characters: [Character]?
     public let concepts: [Concept]?
     public let developers: [GBObject]?
-    public let first_appearance_characters: [GBObject]?
-    public let first_appearance_concepts: [GBObject]?
-    public let first_appearance_locations: [GBObject]?
-    public let first_appearance_objects: [GBObject]?
+    public let first_appearance_characters: [Character]?
+    public let first_appearance_concepts: [Concept]?
+    public let first_appearance_locations: [Location]?
+    public let first_appearance_objects: [Object]?
     public let first_appearance_people: [GBObject]?
     public let franchises: [Franchise]?
     public let genres: [Genre]?
-    public let killed_characters: [GBObject]?
-    public let locations: [GBObject]?
-    public let objects: [GBObject]?
+    public let killed_characters: [Character]?
+    public let locations: [Location]?
+    public let objects: [Object]?
     public let people: [GBObject]?
-    public let publishers: [GBObject]?
+    public let publishers: [Company]?
     public let releases: [GBObject]?
     public let dlcs: [Dlc]?
     public let reviews: [GBObject]?
-    public let similar_games: [GBObject]?
+    public let similar_games: [Game]?
     public let themes: [GBObject]?
 }
